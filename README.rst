@@ -8,10 +8,10 @@ Description:
   
 I've done it twice myself:
 
-4,541,319 tickets played |    
+**4,541,319 tickets played** |    
 [20, 43, 51, 55, 57, 4]
 winner - ['Match All 6 - [20, 43, 51, 55, 57, 4]']
 
-25,334,197 tickets played |   
+**25,334,197 tickets played** |   
 [20, 43, 51, 55, 57, 4]
 winner - ['Match All 6 - [20, 43, 51, 55, 57, 4]']
