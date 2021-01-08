@@ -1,6 +1,5 @@
-"""Funtions that generate random lottery numbers"""
-
 import random
+
 
 def get_winners():
     """Randomly gets winning numbers"""
@@ -47,7 +46,7 @@ def get_numbers(winning_numbers):
         # Randomly get multiplying ball
         numbers.append(random.randrange(1, 25))
 
-        print(f'Drawn Numbers: {numbers} | Winning Numbers: {winning_numbers} | Play: {count}')
+        print(f'Drawn Numbers: {"-".join([str(i) for i in numbers])} | Winning Numbers: {"-".join([str(i) for i in winning_numbers])} | Play: {count}')
         # Check players if players numbers match jackpot numbers. Break loop if winner
         if numbers == winning_numbers:
             jackpot.append(f'Match All 6 - {numbers}')
