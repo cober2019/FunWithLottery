@@ -1,5 +1,6 @@
-import random
+"""Funtions that generate random lottery numbers"""
 
+import random
 
 def get_winners():
     """Randomly gets winning numbers"""
