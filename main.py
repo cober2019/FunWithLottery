@@ -11,7 +11,7 @@ def get_winners():
         numbers.append(random.randrange(1, 71))
 
     # Randomly get multiplying ball
-    numbers.append(random.randrange(1, 71))
+    numbers.append(random.randrange(1, 25))
 
     return numbers
 
@@ -49,7 +49,7 @@ def get_numbers(winning_numbers):
         print(f'Drawn Numbers: {"-".join([str(i) for i in numbers]):<20} |    Winning Numbers: {"-".join([str(i) for i in winning_numbers])}    |    Play: {count}    |    Money Spent ($2 Each): {count * 2}')
         # Check players if players numbers match jackpot numbers. Break loop if winner
         if numbers == winning_numbers:
-            jackpot.append(f'Match All 6 - {numbers}')
+            jackpot.append(f'Match All 6 - {"-".join([str(i) for i in numbers])}')
             break
 
         # If loop is not broken, redelcare numbers list, add one to games played
@@ -57,7 +57,7 @@ def get_numbers(winning_numbers):
         count += 1
 
     # Print jackpot
-    print(f'winner - {jackpot}')
+    print(f'winner - {"-".join([str(i) for i in jackpot])}')
     input("Press enter to close")
 
 
