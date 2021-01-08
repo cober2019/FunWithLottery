@@ -8,7 +8,18 @@ def get_winners():
 
     # Randomly get 5 winning numbers
     for i in range(0, 5):
-        numbers.append(random.randrange(1, 71))
+        if not numbers:
+            number = random.randrange(1, 71)
+            while number > 40:
+                number = random.randrange(1, 71)
+            else:
+                numbers.append(number)
+        else:
+            number = random.randrange(1, 71)
+            while number < numbers[i - 1]:
+                number = random.randrange(1, 71)
+            else:
+                numbers.append(number)
 
     # Randomly get multiplying ball
     numbers.append(random.randrange(1, 25))
