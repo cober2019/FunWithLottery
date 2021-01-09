@@ -10,16 +10,12 @@ def get_winners():
     for i in range(0, 5):
         if not numbers:
             number = random.randrange(1, 71)
-            while number > 40:
+            while number > 25:
                 number = random.randrange(1, 71)
             else:
                 numbers.append(number)
         else:
-            number = random.randrange(1, 71)
-            while number < numbers[i - 1]:
-                number = random.randrange(1, 71)
-            else:
-                numbers.append(number)
+            numbers.append(random.randrange(numbers[i - 1], 71))
 
     # Randomly get multiplying ball
     numbers.append(random.randrange(1, 25))
@@ -42,17 +38,13 @@ def get_numbers(winning_numbers):
             # If numbers list is empty (1st number) dont get a number over 40
             if not numbers:
                 number = random.randrange(1, 71)
-                while number > 40:
+                while number > 25:
                     number = random.randrange(1, 71)
                 else:
                     numbers.append(number)
             else:
                 # While currently generated number is less than last/index number, get new number. Current index minus 1 (Using enumeration here)
-                number = random.randrange(1, 71)
-                while number < numbers[i - 1]:
-                    number = random.randrange(1, 71)
-                else:
-                    numbers.append(number)
+                numbers.append(random.randrange(numbers[i - 1], 71))
 
         # Randomly get multiplying ball
         numbers.append(random.randrange(1, 25))
@@ -60,7 +52,7 @@ def get_numbers(winning_numbers):
         print(f'Drawn Numbers: {"-".join([str(i) for i in numbers]):<20} |    Winning Numbers: {"-".join([str(i) for i in winning_numbers])}    |    Play: {count}    |    Money Spent ($2 Each): {count * 2}')
         # Check players if players numbers match jackpot numbers. Break loop if winner
         if numbers == winning_numbers:
-            jackpot.append(f'Match All 6 - {"-".join([str(i) for i in numbers])}')
+            jackpot.append(f'Matched All 6 - {"-".join([str(i) for i in numbers])}')
             break
 
         # If loop is not broken, redelcare numbers list, add one to games played
@@ -68,7 +60,7 @@ def get_numbers(winning_numbers):
         count += 1
 
     # Print jackpot
-    print(f'winner - {"-".join([str(i) for i in jackpot])}')
+    print(f'Winner - {"-".join([str(i) for i in jackpot])}')
     input("Press enter to close")
 
 
